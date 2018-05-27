@@ -1,0 +1,32 @@
+{
+  "name": "vue-p5",
+  "version": "0.1.0",
+  "description": "Vue component wrapper for p5.js",
+  "main": "dist/vue-p5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kinrany/vue-p5.git"
+  },
+  "keywords": [
+    "Vue",
+    "p5js"
+  ],
+  "author": "Ruslan Fadeev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kinrany/vue-p5/issues"
+  },
+  "homepage": "https://github.com/Kinrany/vue-p5#readme",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "rollup-plugin-vue": "^4.2.0",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "dependencies": {
+    "p5": "^0.6.1",
+    "vue": "^2.5.16"
+  }
+}
