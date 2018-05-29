@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import p5 from "p5";
+import p5 from "p5/lib/p5.min.js";
 
 export default {
   name: "p5",
