@@ -1,6 +1,6 @@
 {
   "name": "vue-p5",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Vue component wrapper for p5.js",
   "main": "dist/vue-p5.js",
   "scripts": {
@@ -26,6 +26,9 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-vue": "^4.2.0",
     "vue-template-compiler": "^2.5.16"
+  },
+  "peerDependencies": {
+    "vue": "^2.5.16"
   },
   "dependencies": {
     "p5": "^0.6.1"
