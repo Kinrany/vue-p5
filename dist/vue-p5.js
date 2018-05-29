@@ -45,15 +45,14 @@
 	      type: Function,
 	      required: true
 	    },
-	    state: null, // null matches any type
 	    setup: {
 	      type: Function,
 	      default: () => {}
 	    }
 	  },
-	  data() {
-	    return { sketch: null };
-	  },
+	  data: () => ({
+	    sketch: null
+	  }),
 	  methods: {
 	    filterByKeys(obj, keys) {
 	      return keys.reduce(
@@ -67,10 +66,7 @@
 	      sketch =>
 	        Object.assign(sketch, {
 	          setup: () => this.setup(sketch),
-	          draw: () => {
-	            this.$emit("update");
-	            this.draw(sketch, this.state);
-	          },
+	          draw: () => this.draw(sketch),
 
 	          keyPressed: () => this.$emit("key-pressed", sketch.keyCode),
 	          keyReleased: () => this.$emit("key-released", sketch.keyCode),
@@ -99,7 +95,6 @@
 	                "pmouseY"
 	              ])
 	            )
-	            
 	        }),
 	      "p5-container"
 	    );
