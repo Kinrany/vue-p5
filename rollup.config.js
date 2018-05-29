@@ -1,11 +1,17 @@
 import VuePlugin from "rollup-plugin-vue";
+import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
 
 export default {
   input: 'src/main.js',
   output: {
     file: 'dist/vue-p5.js',
-    format: 'cjs'
+    format: 'umd',
+    name: 'VueP5'
   },
-  plugins: [VuePlugin()],
-  external: ['p5']
+  plugins: [
+    VuePlugin(),
+    resolve(),
+    commonjs()
+  ]
 }
