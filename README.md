@@ -8,7 +8,7 @@ Vue component for p5.js
 #### NPM
 
 ```bash
-npm install --save vue-p5
+npm install --save vue vue-p5
 ```
 
 See [vue-p5-example](https://github.com/Kinrany/vue-p5-example/) for a webpack project.
@@ -33,6 +33,7 @@ See [this CodePen example](https://codepen.io/Kinrany/pen/bKGYmP).
 ```
 
 ```javascript
+import Vue from 'vue';
 import VueP5 from 'vue-p5';
 
 new Vue({
