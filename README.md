@@ -46,6 +46,12 @@ new Vue({
 See [Example.vue](https://github.com/Kinrany/vue-p5-example/blob/master/src/components/Example.vue) 
 from [vue-p5-example](https://github.com/Kinrany/vue-p5-example/).
 
+## License
+
+LGPL-2.1
+
+(same as p5.js)
+
 ## TODO
 
 Actual docs.
