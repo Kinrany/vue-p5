@@ -96,7 +96,7 @@
 	              ])
 	            )
 	        }),
-	      "p5-container"
+	      this.$el
 	    );
 	  }
 	};
@@ -108,7 +108,7 @@
 	  var _vm = this;
 	  var _h = _vm.$createElement;
 	  var _c = _vm._self._c || _h;
-	  return _c("div", { attrs: { id: "p5-container" } })
+	  return _c("div", { staticClass: "vue-p5-container" })
 	};
 	var __vue_staticRenderFns__ = [];
 	__vue_render__._withStripped = true;

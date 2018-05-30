@@ -1,5 +1,5 @@
 <template>
-  <div id="p5-container"></div>
+  <div class="vue-p5-container"></div>
 </template>
 
 <script>
@@ -63,7 +63,7 @@ export default {
               ])
             )
         }),
-      "p5-container"
+      this.$el
     );
   }
 };
