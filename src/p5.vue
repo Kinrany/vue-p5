@@ -17,9 +17,6 @@ export default {
       default: () => {}
     }
   },
-  data: () => ({
-    sketch: null
-  }),
   methods: {
     filterByKeys(obj, keys) {
       return keys.reduce(
