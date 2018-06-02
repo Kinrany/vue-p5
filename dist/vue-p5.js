@@ -40,61 +40,28 @@
 
 	var script = {
 	  name: "p5",
-	  props: {
-	    draw: {
-	      type: Function,
-	      required: true
-	    },
-	    setup: {
-	      type: Function,
-	      default: () => {}
-	    }
-	  },
-	  methods: {
-	    filterByKeys(obj, keys) {
-	      return keys.reduce(
-	        (acc, key) => Object.assign(acc, { [key]: obj[key] }),
-	        {}
-	      );
-	    }
-	  },
 	  mounted() {
-	    new p5(
-	      sketch =>
-	        Object.assign(sketch, {
-	          setup: () => this.setup(sketch),
-	          draw: () => this.draw(sketch),
+	    const event_names = {
+	      setup: "setup",
+	      draw: "draw",
 
-	          keyPressed: () => this.$emit("key-pressed", sketch.keyCode),
-	          keyReleased: () => this.$emit("key-released", sketch.keyCode),
-	          keyTyped: () => this.$emit("key-typed", sketch.key),
+	      keyPressed: "key-pressed",
+	      keyReleased: "key-released",
+	      keyTyped: "key-typed",
 
-	          mousePressed: () => this.$emit("mouse-pressed", sketch.mouseButton),
-	          mouseReleased: () => this.$emit("mouse-released", sketch.mouseButton),
-	          mouseClicked: () => this.$emit("mouse-clicked", sketch.mouseButton),
-	          mouseMoved: () =>
-	            this.$emit(
-	              "mouse-moved",
-	              this.filterByKeys(sketch, [
-	                "mouseX",
-	                "mouseY",
-	                "pmouseX",
-	                "pmouseY"
-	              ])
-	            ),
-	          mouseDragged: () =>
-	            this.$emit(
-	              "mouse-dragged",
-	              this.filterByKeys(sketch, [
-	                "mouseX",
-	                "mouseY",
-	                "pmouseX",
-	                "pmouseY"
-	              ])
-	            )
-	        }),
-	      this.$el
-	    );
+	      mousePressed: "mouse-pressed",
+	      mouseReleased: "mouse-released",
+	      mouseClicked: "mouse-clicked",
+	      mouseMoved: "mouse-moved",
+	      mouseDragged: "mouse-dragged"
+	    };
+
+	    new p5(sketch => {
+	      for (let key in event_names) {
+	        let value = event_names[key];
+	        sketch[key] = () => this.$emit(value, sketch);
+	      }
+	    }, this.$el);
 	  }
 	};
 
@@ -105,7 +72,7 @@
 	  var _vm = this;
 	  var _h = _vm.$createElement;
 	  var _c = _vm._self._c || _h;
-	  return _c("div", { staticClass: "vue-p5-container" })
+	  return _c("div")
 	};
 	var __vue_staticRenderFns__ = [];
 	__vue_render__._withStripped = true;
