@@ -15,7 +15,7 @@ npm install --save vue vue-p5
 ### Script tag
 
 ```html
-<script src="https://unpkg.com/vue-p5@0.3.x"></script>
+<script src="https://unpkg.com/vue-p5"></script>
 ```
 
 This will expose a global `VueP5` object.
@@ -26,8 +26,7 @@ This will expose a global `VueP5` object.
 
 ```html
 <div id="app">
-  <p5 :draw="sketch => sketch.background(255, 0, 0)"
-      @mouse-clicked="console.log(`mouse clicked: ${$event}`)"></p5>
+  <vue-p5 @draw="draw" @key-pressed="keyPressed"></vue-p5>
 </div>
 ```
 
@@ -38,7 +37,16 @@ import VueP5 from 'vue-p5';
 new Vue({
   el: '#app',
   components: {
-    p5: VueP5
+    'vue-p5': VueP5
+  },
+  methods: {
+    draw(sketch) {
+      sketch.background(255, 0, 0);
+    },
+    keyPressed({keyCode}) {
+      let key = String.fromCharCode(keyCode);
+      console.log(`key pressed: ${key}`);
+    }
   }
 });
 ```
@@ -53,11 +61,7 @@ A game of Snake: [vue-p5-snake](https://github.com/Kinrany/vue-p5-snake/)
 
 ## FAQ
 
-Can I pass component methods as props?
-
- - Yes, though it's discouraged by Vue community.
-   
-   `draw` and `setup` will become events in `0.4.x`.
+Feel free to ask questions in issues.
 
 ## Versioning
 
