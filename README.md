@@ -1,6 +1,6 @@
 # vue-p5
 
-[Vue](https://vuejs.org/) component for [p5.js](https://p5js.org/).
+[p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) component
 
 ## Installation
 
