@@ -1,6 +1,24 @@
 # vue-p5
 
-[p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) component
+Create [p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) component.
+
+```html
+<div id="app">
+  <vue-p5 v-on="this"></vue-p5>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  methods: {
+    setup(sketch) {
+      sketch.text('Hello p5!', 10, 10);
+    }
+  }
+});
+</script>
+```
+
 
 ## Usage
 
