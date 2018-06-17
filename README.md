@@ -3,7 +3,7 @@
 Create [p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) component.
 
 
-## Quick Start
+## Quick start
 
 ### Script
 
@@ -53,6 +53,8 @@ export default {
 
 ## Usage
 
+### v-on object syntax
+
 In the examples above `v-on="this"` and `{on: this}` are a short (and hacky) way to avoid handling every p5 event explicitly. You might want to use one of the other options:
 
 ```html
@@ -74,6 +76,8 @@ on: {
 ```
 
 See also [`v-on` object syntax](https://vuejs.org/v2/api/#v-on).
+
+### Events - p5 and Vue
 
 Every [p5 event](https://p5js.org/reference/#group-Events) is exposed as a [Vue event](https://vuejs.org/v2/guide/events.html). The first argument is the sketch object used for drawing and everything else:
 
