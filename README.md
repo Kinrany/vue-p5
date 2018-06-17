@@ -12,6 +12,7 @@ new Vue({
   el: '#app',
   methods: {
     setup(sketch) {
+      sketch.background('green');
       sketch.text('Hello p5!', 10, 10);
     }
   }

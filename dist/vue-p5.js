@@ -39,7 +39,7 @@
 	//
 
 	var script = {
-	  name: "p5",
+	  name: "VueP5",
 	  mounted() {
 	    const event_names = {
 	      preload: "preload",
@@ -50,11 +50,21 @@
 	      keyReleased: "keyreleased",
 	      keyTyped: "keytyped",
 
+	      mouseMoved: "mousemoved",
+	      mouseDragged: "mousedragged",
 	      mousePressed: "mousepressed",
 	      mouseReleased: "mousereleased",
 	      mouseClicked: "mouseclicked",
-	      mouseMoved: "mousemoved",
-	      mouseDragged: "mousedragged"
+	      doubleClicked: "doubleclicked",
+	      mouseWheel: "mousewheel",
+
+	      touchStarted: "touchstarted",
+	      touchMoved: "touchmoved",
+	      touchEnded: "touchended",
+
+	      deviceMoved: "devicemoved",
+	      deviceTurned: "deviceturned",
+	      deviceShaken: "deviceshaken",
 	    };
 
 	    new p5(sketch => {
@@ -64,11 +74,11 @@
 	        const vueEventName = event_names[p5EventName];
 	        const savedCallback = sketch[p5EventName];
 
-	        sketch[p5EventName] = () => {
+	        sketch[p5EventName] = (...args) => {
 	          if (savedCallback) {
-	            savedCallback(sketch);
+	            savedCallback(sketch, ...args);
 	          }
-	          this.$emit(vueEventName, sketch);
+	          this.$emit(vueEventName, sketch, ...args);
 	        };
 	      }
 	    }, this.$el);
@@ -182,7 +192,7 @@
 	/* style inject SSR */
 
 
-	var P5Vue = __vue_normalize__(
+	var VueP5 = __vue_normalize__(
 	  __vue_template__,
 	  __vue_inject_styles__,
 	  typeof __vue_script__ === 'undefined' ? {} : __vue_script__,
@@ -193,6 +203,10 @@
 	  typeof __vue_create_injector_ssr__ !== 'undefined' ? __vue_create_injector_ssr__ : function () {}
 	)
 
-	return P5Vue;
+	if (Vue !== undefined) {
+	  Vue.component('vue-p5', VueP5);
+	}
+
+	return VueP5;
 
 })));

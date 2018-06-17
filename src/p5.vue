@@ -1,12 +1,12 @@
 <template>
-  <div></div>
+  <div/>
 </template>
 
 <script>
 import p5 from "p5/lib/p5.min.js";
 
 export default {
-  name: "p5",
+  name: "VueP5",
   mounted() {
     const event_names = {
       preload: "preload",
@@ -17,11 +17,21 @@ export default {
       keyReleased: "keyreleased",
       keyTyped: "keytyped",
 
+      mouseMoved: "mousemoved",
+      mouseDragged: "mousedragged",
       mousePressed: "mousepressed",
       mouseReleased: "mousereleased",
       mouseClicked: "mouseclicked",
-      mouseMoved: "mousemoved",
-      mouseDragged: "mousedragged"
+      doubleClicked: "doubleclicked",
+      mouseWheel: "mousewheel",
+
+      touchStarted: "touchstarted",
+      touchMoved: "touchmoved",
+      touchEnded: "touchended",
+
+      deviceMoved: "devicemoved",
+      deviceTurned: "deviceturned",
+      deviceShaken: "deviceshaken",
     };
 
     new p5(sketch => {
@@ -31,11 +41,11 @@ export default {
         const vueEventName = event_names[p5EventName];
         const savedCallback = sketch[p5EventName];
 
-        sketch[p5EventName] = () => {
+        sketch[p5EventName] = (...args) => {
           if (savedCallback) {
-            savedCallback(sketch);
+            savedCallback(sketch, ...args);
           }
-          this.$emit(vueEventName, sketch);
+          this.$emit(vueEventName, sketch, ...args);
         };
       }
     }, this.$el);

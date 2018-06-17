@@ -1,3 +1,7 @@
-import P5Vue from "./p5.vue";
+import VueP5 from "./p5.vue";
 
-export default P5Vue;
+export default VueP5;
+
+if (Vue !== undefined) {
+  Vue.component('vue-p5', VueP5);
+}
