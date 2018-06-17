@@ -11,11 +11,11 @@ There are two ways to use vue-p5.
    <vue-p5 
        @setup="(sketch) => { sketch.background(0); }"
        @draw="(sketch) => {...}"
-       @key-pressed="(sketch) => {...}" >
+       @keypressed="(sketch) => {...}" >
    </vue-p5>
    ```
    You can also use [`v-on` object syntax](https://vuejs.org/v2/api/#v-on):`v-on="{setup, draw}"` to handle all events with Vue instance methods.  
-   In `0.5.x` this will be as easy as `v-on="this"`.
+   Or just `v-on="this"` if you feel lazy.
 
 1. Use a [p5 instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode) sketch:  
    ```html
@@ -41,7 +41,7 @@ npm install --save vue vue-p5
 ### Script tag
 
 ```html
-<script src="https://unpkg.com/vue-p5@0.4.x"></script>
+<script src="https://unpkg.com/vue-p5@0.5.x"></script>
 ```
 
 This will expose the component as a global `VueP5` object.
