@@ -65,7 +65,9 @@
 	        const savedCallback = sketch[p5EventName];
 
 	        sketch[p5EventName] = () => {
-	          savedCallback(sketch);
+	          if (savedCallback) {
+	            savedCallback(sketch);
+	          }
 	          this.$emit(vueEventName, sketch);
 	        };
 	      }
