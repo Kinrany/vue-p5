@@ -42,6 +42,7 @@
 	  name: "p5",
 	  mounted() {
 	    const event_names = {
+	      preload: "preload",
 	      setup: "setup",
 	      draw: "draw",
 
@@ -57,9 +58,16 @@
 	    };
 
 	    new p5(sketch => {
-	      for (let key in event_names) {
-	        let value = event_names[key];
-	        sketch[key] = () => this.$emit(value, sketch);
+	      this.$emit("sketch", sketch);
+
+	      for (let p5EventName in event_names) {
+	        const vueEventName = event_names[p5EventName];
+	        const savedCallback = sketch[p5EventName];
+
+	        sketch[p5EventName] = () => {
+	          savedCallback(sketch);
+	          this.$emit(vueEventName, sketch);
+	        };
 	      }
 	    }, this.$el);
 	  }
