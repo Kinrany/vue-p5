@@ -46,15 +46,15 @@
 	      setup: "setup",
 	      draw: "draw",
 
-	      keyPressed: "key-pressed",
-	      keyReleased: "key-released",
-	      keyTyped: "key-typed",
+	      keyPressed: "keypressed",
+	      keyReleased: "keyreleased",
+	      keyTyped: "keytyped",
 
-	      mousePressed: "mouse-pressed",
-	      mouseReleased: "mouse-released",
-	      mouseClicked: "mouse-clicked",
-	      mouseMoved: "mouse-moved",
-	      mouseDragged: "mouse-dragged"
+	      mousePressed: "mousepressed",
+	      mouseReleased: "mousereleased",
+	      mouseClicked: "mouseclicked",
+	      mouseMoved: "mousemoved",
+	      mouseDragged: "mousedragged"
 	    };
 
 	    new p5(sketch => {
