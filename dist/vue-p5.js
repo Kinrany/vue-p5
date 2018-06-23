@@ -203,7 +203,7 @@
 	  typeof __vue_create_injector_ssr__ !== 'undefined' ? __vue_create_injector_ssr__ : function () {}
 	)
 
-	if (Vue !== undefined) {
+	if (typeof Vue !== 'undefined' && Vue) {
 	  Vue.component('vue-p5', VueP5);
 	}
 
