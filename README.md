@@ -9,7 +9,7 @@ Create [p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) compon
 
 ```html
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-p5@0.5.x"></script>
+<script src="https://unpkg.com/vue-p5@0.6.x"></script>
 
 <div id="app">
   <vue-p5 v-on="this"></vue-p5>
@@ -31,7 +31,7 @@ new Vue({
 ### NPM
 
 ```bash
-npm install --save vue vue-p5@0.5.x
+npm install --save vue vue-p5@0.6.x
 ```
 
 ```javascript
@@ -164,8 +164,6 @@ A game of Snake: [vue-p5-snake](https://github.com/Kinrany/vue-p5-snake/)
 ## FAQ
 
 None yet. Feel free to ask anything or propose changes in [issues](https://github.com/Kinrany/vue-p5/issues)!
-
-You can also ping me on Twitter: [@kinrany](https://twitter.com/kinrany)
 
 ## Versioning
 
