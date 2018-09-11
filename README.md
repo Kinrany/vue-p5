@@ -153,9 +153,9 @@ Remember to use arrow functions if you need `this`.
 
 ## Examples
 
-> Some or all examples might be using older versions of vue-p5.
+> Some of the examples might be using older versions of vue-p5.
 
-Hello world: [codepen](https://codepen.io/Kinrany/pen/pKdpbV)
+Hello world: [codepen](https://codepen.io/Kinrany/pen/oPqEbQ)
 
 Webpack project: [vue-p5-example](https://github.com/Kinrany/vue-p5-example/)
 
