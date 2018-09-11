@@ -9,7 +9,7 @@ Create [p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) compon
 
 ```html
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-p5@0.6.x"></script>
+<script src="https://unpkg.com/vue-p5@0.7.x"></script>
 
 <div id="app">
   <vue-p5 v-on="this"></vue-p5>
@@ -31,7 +31,7 @@ new Vue({
 ### NPM
 
 ```bash
-npm install --save vue vue-p5@0.6.x
+npm install --save vue vue-p5@0.7.x
 ```
 
 ```javascript
