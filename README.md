@@ -163,7 +163,7 @@ A game of Snake: [vue-p5-snake](https://github.com/Kinrany/vue-p5-snake/)
 
 ## FAQ
 
-None yet. Feel free to ask anything or propose changes in [issues](https://github.com/Kinrany/vue-p5/issues)!
+None yet. Feel free to open a new [issue](https://github.com/Kinrany/vue-p5/issues) if you have a question or a feature request!
 
 ## Versioning
 
