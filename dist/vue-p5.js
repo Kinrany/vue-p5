@@ -28,40 +28,55 @@
 
 	//
 
+	function distinct(arr) {
+	  return Array.from(new Set(arr));
+	}
+
+	const initialEvents = [
+	  "preload",
+	  "setup",
+	  "draw",
+
+	  "deviceMoved",
+	  "deviceTurned",
+	  "deviceShaken",
+
+	  "keyPressed",
+	  "keyReleased",
+	  "keyTyped",
+
+	  "mouseMoved",
+	  "mouseDragged",
+	  "mousePressed",
+	  "mouseReleased",
+	  "mouseClicked",
+	  "doubleClicked",
+	  "mouseWheel",
+
+	  "touchStarted",
+	  "touchMoved",
+	  "touchEnded",
+
+	  "windowResized",
+	];
+
 	var script = {
 	  name: "VueP5",
+	  props: ["additionalEvents"],
+	  computed: {
+	    p5Events() {
+	      const {additionalEvents} = this;
+	      return Array.isArray(additionalEvents)
+	        ? distinct(initialEvents.concat(additionalEvents))
+	        : initialEvents;
+	    },
+	  },
 	  mounted() {
-	    const event_names = {
-	      preload: "preload",
-	      setup: "setup",
-	      draw: "draw",
-
-	      keyPressed: "keypressed",
-	      keyReleased: "keyreleased",
-	      keyTyped: "keytyped",
-
-	      mouseMoved: "mousemoved",
-	      mouseDragged: "mousedragged",
-	      mousePressed: "mousepressed",
-	      mouseReleased: "mousereleased",
-	      mouseClicked: "mouseclicked",
-	      doubleClicked: "doubleclicked",
-	      mouseWheel: "mousewheel",
-
-	      touchStarted: "touchstarted",
-	      touchMoved: "touchmoved",
-	      touchEnded: "touchended",
-
-	      deviceMoved: "devicemoved",
-	      deviceTurned: "deviceturned",
-	      deviceShaken: "deviceshaken",
-	    };
-
 	    new p5(sketch => {
 	      this.$emit("sketch", sketch);
 
-	      for (let p5EventName in event_names) {
-	        const vueEventName = event_names[p5EventName];
+	      for (const p5EventName of p5Events) {
+	        const vueEventName = p5EventName.toLowerCase();
 	        const savedCallback = sketch[p5EventName];
 
 	        sketch[p5EventName] = (...args) => {
@@ -72,7 +87,7 @@
 	        };
 	      }
 	    }, this.$el);
-	  }
+	  },
 	};
 
 	function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
