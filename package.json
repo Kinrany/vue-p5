@@ -1,6 +1,6 @@
 {
   "name": "vue-p5",
-  "version": "0.7.1",
+  "version": "0.8.0-rc1",
   "description": "Vue component wrapper for p5.js",
   "main": "dist/vue-p5.js",
   "scripts": {
