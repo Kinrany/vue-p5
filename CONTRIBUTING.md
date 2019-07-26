@@ -1,0 +1,5 @@
+### Build
+
+```
+npm run build
+```
