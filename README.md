@@ -9,7 +9,7 @@ Create [p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) compon
 
 ```html
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-p5@0.7.x"></script>
+<script src="https://unpkg.com/vue-p5@0.8.x"></script>
 
 <div id="app">
   <vue-p5 v-on="this"></vue-p5>
@@ -31,7 +31,7 @@ new Vue({
 ### NPM
 
 ```bash
-npm install --save vue vue-p5@0.7.x
+npm install --save vue vue-p5@0.8.x
 ```
 
 ```javascript
@@ -45,8 +45,8 @@ export default {
       sketch.text('Hello p5!', 20, 20);
     }
   },
-  render(h) { 
-    return h(VueP5, {on: this}); 
+  render(h) {
+    return h(VueP5, {on: this});
   }
 };
 ```
@@ -60,7 +60,7 @@ In the examples above `v-on="this"` and `{on: this}` are a short (and hacky) way
 ```html
 <vue-p5 v-on="{setup, draw, keypressed}"></vue-p5>
 <!-- which is equivalent to: -->
-<vue-p5 
+<vue-p5
     @setup="setup"
     @draw="draw"
     @keypressed="keypressed">
@@ -69,8 +69,8 @@ In the examples above `v-on="this"` and `{on: this}` are a short (and hacky) way
 
 ```javascript
 on: {
-  setup: this.setup, 
-  draw: this.draw, 
+  setup: this.setup,
+  draw: this.draw,
   keypressed: this.keypressed
 }
 ```
@@ -113,9 +113,15 @@ methods: {
 
 ### Event names
 
-Each event emitted by vue-p5 has the same name as the corresponding p5 event, but lowercase. 
+Each event emitted by vue-p5 has the same name as the corresponding p5 event, but lowercase.
 
 `mouseclicked`, not ~~`mouseClicked`~~, not ~~`mouse-clicked`~~, not ~~`mouse_clicked`~~.
+
+Currently all p5 events are supported, but there's an escape hatch for registering unsupported events:
+
+```html
+<vue-p5 :additionalEvents="['windowResized']"></vue-p5>
+```
 
 ### Importing existing sketches
 
