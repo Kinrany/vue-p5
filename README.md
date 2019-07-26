@@ -111,13 +111,15 @@ methods: {
 }
 ```
 
-### Event names
+#### Event names
 
 Each event emitted by vue-p5 has the same name as the corresponding p5 event, but lowercase.
 
 `mouseclicked`, not ~~`mouseClicked`~~, not ~~`mouse-clicked`~~, not ~~`mouse_clicked`~~.
 
-Currently all p5 events are supported, but there's an escape hatch for registering unsupported events:
+#### Missing events
+
+Currently all p5 events are supported, but there's an escape hatch for registering missing events:
 
 ```html
 <vue-p5 :additionalEvents="['windowResized']"></vue-p5>
@@ -125,7 +127,7 @@ Currently all p5 events are supported, but there's an escape hatch for registeri
 
 ### Importing existing sketches
 
-In addition to all the p5 events, there's a `@sketch` event that can be used to import an existing p5 sketch written in [instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode).
+In addition to p5 events, there's a `@sketch` event for importing an existing p5 sketch written in [instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode).
 
 ```html
 <vue-p5 @sketch="sketch"></vue-p5>
@@ -165,9 +167,9 @@ Webpack project: [vue-p5-example](https://github.com/Kinrany/vue-p5-example/)
 
 A game of Snake: [vue-p5-snake](https://github.com/Kinrany/vue-p5-snake/)
 
-## FAQ
+## Feedback
 
-None yet. Feel free to open a new [issue](https://github.com/Kinrany/vue-p5/issues) if you have a question or a feature request!
+Feel free to open a new [issue](https://github.com/Kinrany/vue-p5/issues) if you have a question or a feature request!
 
 ## Versioning
 
