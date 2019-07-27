@@ -75,7 +75,7 @@
 	    new p5(sketch => {
 	      this.$emit("sketch", sketch);
 
-	      for (const p5EventName of p5Events) {
+	      for (const p5EventName of this.p5Events) {
 	        const vueEventName = p5EventName.toLowerCase();
 	        const savedCallback = sketch[p5EventName];
 
