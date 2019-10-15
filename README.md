@@ -9,7 +9,7 @@ Create [p5.js](https://p5js.org/) instance as a [Vue](https://vuejs.org/) compon
 
 ```html
 <script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vue-p5@0.8.x"></script>
+<script src="https://unpkg.com/vue-p5"></script>
 
 <div id="app">
   <vue-p5 v-on="this"></vue-p5>
@@ -31,7 +31,7 @@ new Vue({
 ### NPM
 
 ```bash
-npm install --save vue vue-p5@0.8.x
+npm install --save vue vue-p5
 ```
 
 ```javascript
@@ -174,6 +174,8 @@ Feel free to open a new [issue](https://github.com/Kinrany/vue-p5/issues) if you
 ## Versioning
 
 This project adheres to [semver](https://semver.org/). Minor changes are breaking.
+
+Use `vue-p5@next` if you need the latest p5 version.
 
 ## License
 
