@@ -161,7 +161,7 @@ Remember to use arrow functions if you need `this`.
 
 ## Examples
 
-Hello world: [codepen](https://codepen.io/Kinrany/pen/oPqEbQ)
+Hello world: [codepen](https://codepen.io/Kinrany/pen/ExaPeNg)
 
 Webpack project: [vue-p5-example](https://github.com/Kinrany/vue-p5-example/)
 
