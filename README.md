@@ -175,7 +175,7 @@ Feel free to open a new [issue](https://github.com/Kinrany/vue-p5/issues) if you
 
 This project adheres to [semver](https://semver.org/). Minor changes are breaking.
 
-Use `vue-p5@next` if you need the latest p5 version.
+Use `vue-p5@next` to get a version with future updates.
 
 ## License
 
