@@ -1,5 +1,5 @@
 <template>
-  <div/>
+  <div></div>
 </template>
 
 <script>
@@ -34,7 +34,7 @@ const initialEvents = [
   "touchMoved",
   "touchEnded",
 
-  "windowResized",
+  "windowResized"
 ];
 
 export default {
@@ -42,11 +42,11 @@ export default {
   props: ["additionalEvents"],
   computed: {
     p5Events() {
-      const {additionalEvents} = this;
+      const { additionalEvents } = this;
       return Array.isArray(additionalEvents)
         ? distinct(initialEvents.concat(additionalEvents))
         : initialEvents;
-    },
+    }
   },
   mounted() {
     new p5(sketch => {
@@ -64,6 +64,6 @@ export default {
         };
       }
     }, this.$el);
-  },
+  }
 };
 </script>
