@@ -115,15 +115,22 @@ methods: {
 
 Each event emitted by vue-p5 has the same name as the corresponding p5 event, but lowercase.
 
-`mouseclicked`, not ~~`mouseClicked`~~, not ~~`mouse-clicked`~~, not ~~`mouse_clicked`~~.
+`mouseclicked`, not ~~`mouseClicked`~~.
 
 #### Missing events
 
-Currently all p5 events are supported, but there's an escape hatch for registering missing events:
+Currently all p5 events [are supported], but there is an escape hatch. For example, if `windowResized` was missing, it's (lowercase) name could be passed to `additional-events` prop to make `vue-p5` aware of it:
 
 ```html
-<vue-p5 :additionalEvents="['windowResized']"></vue-p5>
+<vue-p5
+  :additional-events="['windowresized']"
+  @windowresized="windowresized"
+></vue-p5>
 ```
+
+Though please [let me know](#feedback) if you ever have to use this.
+
+[are supported]: https://github.com/Kinrany/vue-p5/blob/master/src/p5.vue#L12-L38
 
 ### Importing existing sketches
 
@@ -169,7 +176,9 @@ A game of Snake: [vue-p5-snake](https://github.com/Kinrany/vue-p5-snake/)
 
 ## Feedback
 
-Feel free to open a new [issue](https://github.com/Kinrany/vue-p5/issues) if you have a question or a feature request!
+Feedback is very welcome! Free to [open a new issue](https://github.com/Kinrany/vue-p5/issues/new) for any reason.
+
+You can also [ping me on twitter](https://twitter.com/kinrany) or [write me an email](mailto:kinrany@yandex.com).
 
 ## Versioning
 
