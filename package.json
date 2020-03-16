@@ -22,12 +22,13 @@
   },
   "homepage": "https://github.com/Kinrany/vue-p5#readme",
   "devDependencies": {
-    "rollup": "^1.17.0",
-    "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-vue": "^5.0.1",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "postcss": "^7.0.27",
+    "rollup": "^1.32.1",
+    "rollup-plugin-vue": "^5.1.6",
     "vue": "2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
     "vue": "^2.6.10"
