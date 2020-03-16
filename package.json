@@ -27,11 +27,11 @@
     "postcss": "^7.0.27",
     "rollup": "^1.32.1",
     "rollup-plugin-vue": "^5.1.6",
-    "vue": "2.6.10",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   },
   "dependencies": {
     "p5": "^1.0.0"
