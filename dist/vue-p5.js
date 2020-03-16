@@ -210,7 +210,9 @@
 	    undefined
 	  );
 
-	if (Vue) {
+	// `typeof Vue !== 'undefined'` prevents
+	// the "Vue is not defined" error
+	if (typeof Vue !== 'undefined' && Vue) {
 	  Vue.component('vue-p5', __vue_component__);
 	}
 
