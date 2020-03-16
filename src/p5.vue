@@ -38,6 +38,9 @@ const initialEvents = [
 ];
 
 export default {
+  // re-export p5 for use with other libraries
+  p5,
+
   name: "VueP5",
   props: ["additionalEvents"],
   computed: {
