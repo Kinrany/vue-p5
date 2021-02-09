@@ -2,38 +2,40 @@
   "name": "vue-p5",
   "version": "0.9.0-rc2",
   "description": "Vue component wrapper for p5.js",
-  "main": "dist/vue-p5.js",
+  "author": "Ruslan Fadeev",
   "scripts": {
     "build": "rollup --config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kinrany/vue-p5.git"
+  "main": "dist/vue-p5.js",
+  "dependencies": {
+    "p5": "^0.9.0",
+    "vue": "^3.0.5"
   },
-  "keywords": [
-    "Vue",
-    "p5js"
-  ],
-  "author": "Ruslan Fadeev",
-  "license": "LGPL-2.1",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@vue/compiler-sfc": "^3.0.5",
+    "postcss": "^7.0.27",
+    "rollup": "^1.32.1",
+    "rollup-plugin-vue": "^6.0.0",
+    "vue-cli-plugin-vue-next": "~0.1.4",
+    "vue-loader": "^15.9.6"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.5"
+  },
   "bugs": {
     "url": "https://github.com/Kinrany/vue-p5/issues"
   },
   "homepage": "https://github.com/Kinrany/vue-p5#readme",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.2",
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "postcss": "^7.0.27",
-    "rollup": "^1.32.1",
-    "rollup-plugin-vue": "^5.1.6",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "peerDependencies": {
-    "vue": "^2.6.11"
-  },
-  "dependencies": {
-    "p5": "^1.0.0"
+  "keywords": [
+    "Vue",
+    "p5js"
+  ],
+  "license": "LGPL-2.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kinrany/vue-p5.git"
   }
 }
