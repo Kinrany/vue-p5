@@ -55,7 +55,7 @@ export default {
 
 ### v-on object syntax
 
-In the examples above `v-on="this"` and `{on: this}` are a short (and hacky) way to avoid handling every p5 event explicitly. You might want to use one of the other options:
+In the examples above `v-on="this"` and `{on: this}` are a short (and hacky) way to avoid handling every p5 event explicitly. You might want to be more explicit:
 
 ```html
 <vue-p5 v-on="{setup, draw, keypressed}"></vue-p5>
@@ -89,7 +89,7 @@ methods: {
     sk.line(sk.pmouseX, sk.pmouseY, sk.mouseX, sk.mouseY);
   },
   keypressed(sk) {
-    // convert the key code to it's string
+    // convert the key code to its string
     // representation and print it
     const key = String.fromCharCode(sk.keyCode);
     sk.print(key);
@@ -97,7 +97,7 @@ methods: {
 }
 ```
 
-Using methods makes it possible to access the current component:
+Using methods makes it possible to access the component data:
 
 ```javascript
 // green background
@@ -119,7 +119,7 @@ Each event emitted by vue-p5 has the same name as the corresponding p5 event, bu
 
 #### Missing events
 
-Currently all p5 events [are supported], but there is an escape hatch. For example, if `windowResized` was missing, it's (lowercase) name could be passed to `additional-events` prop to make `vue-p5` aware of it:
+Currently all p5 events [are supported], but there is an escape hatch. For example, if `windowResized` was missing, its (lowercase) name could be passed to `additional-events` prop to make `vue-p5` aware of it:
 
 ```html
 <vue-p5
@@ -134,7 +134,7 @@ Though please [let me know](#feedback) if you ever have to use this.
 
 ### Importing existing sketches
 
-In addition to p5 events, there's a `@sketch` event for importing an existing p5 sketch written in [instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode).
+In addition to p5 events, there's `@sketch`: an event for importing an existing p5 sketch written in [instance mode](https://github.com/processing/p5.js/wiki/Global-and-instance-mode).
 
 ```html
 <vue-p5 @sketch="sketch"></vue-p5>
@@ -162,7 +162,7 @@ new Vue({
 </script>
 ```
 
-Remember to use arrow functions if you need `this`.
+Remember to use arrow functions if you want `this` to refer to the component.
 
 `@sketch` can be used in parallel with other events. Functions defined in the `@sketch` handler will always be called first.
 
@@ -182,7 +182,7 @@ You can also [ping me on twitter](https://twitter.com/kinrany) or [write me an e
 
 ## Versioning
 
-This project adheres to [semver](https://semver.org/). Minor changes are breaking.
+This project adheres to [semver](https://semver.org/). Major changes are breaking.
 
 Use `vue-p5@next` to get a version with future updates.
 
