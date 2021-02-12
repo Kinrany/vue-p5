@@ -1,4 +1,4 @@
-import VueP5 from "./p5.vue";
+import VueP5 from "./p5";
 
 export default VueP5;
 

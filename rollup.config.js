@@ -1,4 +1,3 @@
-import VuePlugin from "rollup-plugin-vue";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 
@@ -10,7 +9,6 @@ export default {
     name: 'VueP5'
   },
   plugins: [
-    VuePlugin(),
     resolve(),
     commonjs()
   ]

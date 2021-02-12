@@ -24,12 +24,8 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
-    "@vue/compiler-sfc": "^3.0.5",
-    "postcss": "^8.2.5",
     "rollup": "^2.38.5",
-    "rollup-plugin-vue": "^6.0.0",
-    "vue": "^3.0.5",
-    "vue-template-compiler": "^2.6.12"
+    "vue": "^3.0.5"
   },
   "peerDependencies": {
     "vue": "^2.6.11"

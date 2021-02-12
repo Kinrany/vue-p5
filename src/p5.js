@@ -1,8 +1,3 @@
-<template>
-  <div></div>
-</template>
-
-<script>
 import p5 from "p5/lib/p5.min.js";
 
 function distinct(arr) {
@@ -43,6 +38,7 @@ export default {
 
   name: "VueP5",
   props: ["additionalEvents"],
+  template: '<div></div>',
   computed: {
     p5Events() {
       const { additionalEvents } = this;
@@ -69,4 +65,3 @@ export default {
     }, this.$el);
   }
 };
-</script>
