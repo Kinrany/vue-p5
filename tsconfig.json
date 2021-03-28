@@ -1,0 +1,30 @@
+{
+  /* See https://www.typescriptlang.org/tsconfig for reference. */
+  /* This file is only used for type checking. See `build.ts` for declaration file generation. */
+  "compilerOptions": {
+    /* Project Options */
+    "isolatedModules": true,
+    "module": "CommonJS",
+    "noEmit": true,
+    "target": "es2015",
+
+    /* Strict Checks */
+    "strict": true,
+
+    /* Linter Checks */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    /* Module Resolution */
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+
+    /* Advanced */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  }
+}
