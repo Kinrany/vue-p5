@@ -4,7 +4,7 @@
   "compilerOptions": {
     /* Project Options */
     "isolatedModules": true,
-    "module": "CommonJS",
+    "module": "es2015",
     "noEmit": true,
     "target": "es2015",
 

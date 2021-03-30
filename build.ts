@@ -7,7 +7,7 @@ const esbuildCommonOptions: esbuild.BuildOptions = {
   bundle: true,
   define: { 'process.env.NODE_ENV': '"production"' },
   entryPoints: [entrypoint],
-  external: ['vue', 'p5'],
+  external: ['vue', 'p5', '@vue/composition-api'],
   minify: true,
   sourcemap: true,
   target: 'es2015',
@@ -15,14 +15,15 @@ const esbuildCommonOptions: esbuild.BuildOptions = {
 
 esbuild.buildSync({
   ...esbuildCommonOptions,
-  format: 'cjs',
-  outdir: 'dist/commonjs',
+  format: 'esm',
+  outdir: 'dist/esm',
 });
 
 esbuild.buildSync({
   ...esbuildCommonOptions,
   format: 'iife',
   outdir: 'dist/iife',
+  globalName: 'VueP5',
 });
 
 const emitResult = tsc.createProgram({
@@ -33,7 +34,7 @@ const emitResult = tsc.createProgram({
     emitDeclarationOnly: true,
     esModuleInterop: true,
     isolatedModules: true,
-    module: tsc.ModuleKind.CommonJS,
+    module: tsc.ModuleKind.ES2015,
     moduleResolution: tsc.ModuleResolutionKind.NodeJs,
     noEmitOnError: true,
     outDir: 'dist',

@@ -2,11 +2,12 @@
   "name": "vue-p5",
   "version": "1.0.0-beta.2",
   "description": "Vue component wrapper for p5.js",
-  "main": "dist/commonjs/vue-p5.js",
-  "browser": "dist/iife/vue-p5.js",
+  "main": "dist/esm/vue-p5.js",
+  "type": "module",
+  "cdn": "dist/iife/vue-p5.js",
   "types": "dist/vue-p5.d.ts",
   "scripts": {
-    "build": "ts-node ./build.ts",
+    "build": "cat ./build.ts | esbuild --loader=\"ts\" --format=\"cjs\" | node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,7 +33,6 @@
     "@vue/composition-api": "^1.0.0-rc.6",
     "esbuild": "^0.10.2",
     "p5": "^1.3.0",
-    "ts-node": "^9.1.1",
     "typescript": "^4.2.3",
     "vue": "^3.0.9"
   },
