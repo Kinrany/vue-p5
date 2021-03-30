@@ -1,8 +1,5 @@
 import P5 from "p5";
-import Vue from "vue";
-import VueCompositionAPI, { defineComponent } from "@vue/composition-api";
-
-Vue.use(VueCompositionAPI);
+import { defineComponent } from "vue-demi";
 
 const toLowerCase = <T extends string>(x: T) => x.toLowerCase() as Lowercase<T>;
 
