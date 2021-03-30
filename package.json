@@ -1,10 +1,12 @@
 {
   "name": "vue-p5",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "description": "Vue component wrapper for p5.js",
   "main": "dist/esm/vue-p5.js",
+  "browser": "dist/esm/vue-p5.js",
   "type": "module",
   "cdn": "dist/iife/vue-p5.js",
+  "unpkg": "dist/iife/vue-p5.js",
   "types": "dist/vue-p5.d.ts",
   "scripts": {
     "build": "cat ./build.ts | esbuild --loader=\"ts\" --format=\"cjs\" | node",
