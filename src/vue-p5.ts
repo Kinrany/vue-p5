@@ -1,5 +1,5 @@
 import P5 from "p5";
-import { ref, defineComponent, onMounted } from "vue-demi";
+import { ref, defineComponent, onMounted, h } from "vue-demi";
 
 const toLowerCase = <T extends string>(x: T) => x.toLowerCase() as Lowercase<T>;
 
@@ -34,7 +34,6 @@ const p5EventNames = Object.freeze([
 export default defineComponent({
   name: "VueP5",
   emits: ['sketch', ...p5EventNames.map(toLowerCase)],
-  template: '<div ref="root"></div>',
   setup(_props, context) {
     const root = ref<unknown>(null);
 
@@ -55,6 +54,6 @@ export default defineComponent({
       }, root.value as HTMLElement);
     });
 
-    return { root };
+    return () => h('div', { ref: root });
   }
 });
