@@ -54,6 +54,8 @@ export default defineComponent({
       }, root.value as HTMLElement);
     });
 
-    return () => h('div', { ref: root });
+    return () => h('div', [
+      h('div', { ref: root }),
+    ]);
   }
 });
