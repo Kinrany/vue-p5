@@ -5,7 +5,6 @@ const entrypoint = 'src/vue-p5.ts';
 
 const esbuildCommonOptions: esbuild.BuildOptions = {
   bundle: true,
-  define: { 'process.env.NODE_ENV': '"production"' },
   entryPoints: [entrypoint],
   external: ['vue', 'p5', '@vue/composition-api'],
   minify: true,
