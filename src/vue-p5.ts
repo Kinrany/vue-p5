@@ -1,5 +1,5 @@
 import P5 from "p5";
-import { defineComponent } from "vue-demi";
+import { ref, defineComponent, onMounted } from "vue-demi";
 
 const toLowerCase = <T extends string>(x: T) => x.toLowerCase() as Lowercase<T>;
 
@@ -33,21 +33,28 @@ const p5EventNames = Object.freeze([
 
 export default defineComponent({
   name: "VueP5",
-  template: '<div></div>',
-  mounted() {
-    new P5((sketch: P5) => {
-      this.$emit("sketch", sketch);
+  emits: ['sketch', ...p5EventNames.map(toLowerCase)],
+  template: '<div ref="root"></div>',
+  setup(_props, context) {
+    const root = ref<unknown>(null);
 
-      p5EventNames.forEach(<P5EventName extends typeof p5EventNames[number]>(p5EventName: P5EventName) => {
-        const vueEventName = toLowerCase(p5EventName);
-        const savedCallback = sketch[p5EventName];
-        sketch[p5EventName] = (...args: Parameters<P5[P5EventName]>) => {
-          if (savedCallback) {
-            savedCallback.apply<P5, Parameters<P5[P5EventName]>, void>(sketch, args);
-          }
-          this.$emit(vueEventName, sketch, ...args);
-        };
-      });
-    }, this.$el as HTMLElement);
+    onMounted(() => {
+      new P5((sketch: P5) => {
+        context.emit("sketch", sketch);
+
+        p5EventNames.forEach(<P5EventName extends typeof p5EventNames[number]>(p5EventName: P5EventName) => {
+          const vueEventName = toLowerCase(p5EventName);
+          const savedCallback = sketch[p5EventName];
+          sketch[p5EventName] = (...args: Parameters<P5[P5EventName]>) => {
+            if (savedCallback) {
+              savedCallback.apply<P5, Parameters<P5[P5EventName]>, void>(sketch, args);
+            }
+            context.emit(vueEventName, sketch, ...args);
+          };
+        });
+      }, root.value as HTMLElement);
+    });
+
+    return { root };
   }
 });

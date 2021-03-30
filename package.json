@@ -1,6 +1,6 @@
 {
   "name": "vue-p5",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.8",
   "description": "Vue component wrapper for p5.js",
   "main": "dist/esm/vue-p5.js",
   "browser": "dist/esm/vue-p5.js",
