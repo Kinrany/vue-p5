@@ -62,3 +62,7 @@ typings/
 
 # vuepress build output
 .vuepress/dist
+
+# npm and pnpm lock files
+package-lock.json
+pnpm-lock.yaml

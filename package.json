@@ -1,6 +1,6 @@
 {
   "name": "vue-p5",
-  "version": "0.8.3",
+  "version": "0.8.4-rc.1",
   "description": "Vue component wrapper for p5.js",
   "main": "dist/vue-p5.js",
   "scripts": {
@@ -22,15 +22,15 @@
   },
   "homepage": "https://github.com/Kinrany/vue-p5#readme",
   "devDependencies": {
-    "rollup": "^1.17.0",
-    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup": "^1.32.1",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-vue": "^5.0.1",
-    "vue": "2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "rollup-plugin-vue": "^5.1.9",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
   },
   "peerDependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.12"
   },
   "dependencies": {
     "p5": "^0.10.2"
