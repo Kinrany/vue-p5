@@ -20,7 +20,7 @@ describe('p5', () => {
 
 
   it('should return exact computed events', () => {
-    console.log(wrapper.vm.p5Events)
+    // console.log(wrapper.vm.p5Events)
     expect(wrapper.vm.p5Events).toStrictEqual([
       'preload', 'setup',
       'draw', 'deviceMoved',
@@ -36,10 +36,37 @@ describe('p5', () => {
   })
 
 
-  xit('should return P5 constants', () => {
+  it('should return P5 constants', () => {
     /**
      * HALF_PI PI QUARTER_PI TAU TWO_PI DEGREES RADIANS
      */
+    const mockComponent = {
+      template: `
+        <p5 @sketch="sketch"></p5>
+      `,
+      data() {
+        return {
+          skObj: null
+        }
+      },
+      methods: {
+        sketch(sk) {
+          this.skObj = sk
+        }
+      }
+    }
+
+    const mockWrapper = mount(mockComponent, {
+      components: {p5}
+    })
+
+    const data = mockWrapper.vm.skObj
+
+    expect(data.HALF_PI).toStrictEqual(1.5707963267948966)
+    expect(data.PI).toStrictEqual(3.141592653589793)
+    expect(data.QUARTER_PI).toStrictEqual(0.7853981633974483)
+    expect(data.TAU).toStrictEqual(6.283185307179586)
+    expect(data.TWO_PI).toStrictEqual(6.283185307179586)
   })
 
   xit('should return rest of structure events', () => {
