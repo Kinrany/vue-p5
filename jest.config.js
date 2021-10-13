@@ -1,12 +1,11 @@
 module.exports = {
-
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^~/(.*)$': '<rootDir>/src/$1',
     '^vue$': 'vue/dist/vue.common.js'
   },
   moduleFileExtensions: [
-    // 'ts',
+    'ts',
     'js',
     'vue',
     'json'
@@ -14,7 +13,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupFiles: ["jest-canvas-mock"],
   transform: {
-    // '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': 'ts-jest',
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest',
   },

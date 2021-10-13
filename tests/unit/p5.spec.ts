@@ -1,14 +1,18 @@
 import {
   mount,
-  createLocalVue
+  createLocalVue,
+  Wrapper,
+  VueClass,
 } from '@vue/test-utils'
 import p5 from '@/p5.vue'
+import Vue from 'vue';
+import { Component } from 'vue/types/umd';
 
-let wrapper;
-
+let wrapper: any;
+let localVue: any;
 describe('p5', () => {
   beforeEach(() => {
-    let localVue = createLocalVue()
+    localVue = createLocalVue()
     wrapper = mount(p5, {
       localVue,
     })
@@ -40,27 +44,30 @@ describe('p5', () => {
     /**
      * HALF_PI PI QUARTER_PI TAU TWO_PI DEGREES RADIANS
      */
-    const mockComponent = {
+    const mockComponent: Component = Vue.extend({
       template: `
-        <p5 @sketch="sketch"></p5>
+        <p5 @sketch="sketch"></p5>  
       `,
       data() {
         return {
-          skObj: null
+          p5: {},
+          sk: {}
         }
       },
       methods: {
-        sketch(sk) {
-          this.skObj = sk
+        sketch(sk: any, p5: any): void {
+          this.p5 = new p5()
+          this.sk = sk
         }
       }
-    }
+    })
 
-    const mockWrapper = mount(mockComponent, {
+    const mockWrapper: Wrapper<any, any> = mount(mockComponent, {
+      localVue: createLocalVue(),
       components: {p5}
     })
 
-    const data = mockWrapper.vm.skObj
+    const data: any = mockWrapper.vm.p5
 
     expect(data.HALF_PI).toStrictEqual(1.5707963267948966)
     expect(data.PI).toStrictEqual(3.141592653589793)
