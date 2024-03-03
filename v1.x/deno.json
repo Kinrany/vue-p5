@@ -1,0 +1,10 @@
+{
+  "version": "0.0.0",
+  "tasks": {
+    "build-npm": "deno run --allow-all build_npm.ts",
+    "clear-npm": "rm -rd npm"
+  },
+  "test": {
+    "exclude": ["npm"]
+  }
+}
